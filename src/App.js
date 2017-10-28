@@ -13,13 +13,15 @@ class App extends Component {
     showPersons: true
   }
 
-  
+  togglePersonsHander = () => {
+    this.setState({ showPersons: !this.state.showPersons });
+  }
 
   render() {
     return (
       <div className="App">
         <button>Switch Name</button>
-        <button>Toggle Persons</button>
+        <button onClick={this.togglePersonsHander}>Toggle Persons</button>
 
         {
           this.state.showPersons ? (
