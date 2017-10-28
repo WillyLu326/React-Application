@@ -8,3 +8,5 @@ const Person = () => {
     </div>
   );
 }
+
+export default Person
