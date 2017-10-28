@@ -7,8 +7,8 @@ class App extends Component {
   state = {
     persons: [
       { id: 0, name: 'Willy', age: 28 },
-      { id: 0, name: 'Zheng', age: 28 },
-      { id: 0, name: 'Cedar', age: 25 }
+      { id: 1, name: 'Zheng', age: 28 },
+      { id: 2, name: 'Cedar', age: 25 }
     ],
     showPersons: true
   }
@@ -26,9 +26,11 @@ class App extends Component {
         {
           this.state.showPersons ? (
             <div>
-              <Person />
-              <Person />
-              <Person />
+              {this.state.persons.map(person => {
+                return (
+                  <Person name={person.name} age={person.age} key={person.id} />
+                );
+              })}
             </div>
           ) : null
         }
