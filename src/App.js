@@ -17,6 +17,12 @@ class App extends Component {
     this.setState({ showPersons: !this.state.showPersons });
   }
 
+  deletePersonHanlder = (event, index) => {
+    let persons = [...this.state.persons];
+    persons.splice(index, 1);
+    this.setState({ persons: persons });
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,9 +32,12 @@ class App extends Component {
         {
           this.state.showPersons ? (
             <div>
-              {this.state.persons.map(person => {
+              {this.state.persons.map((person, index) => {
                 return (
-                  <Person name={person.name} age={person.age} key={person.id} />
+                  <Person name={person.name} 
+                          age={person.age} 
+                          key={person.id}
+                          deleted={(event) => this.deletePersonHanlder(event, index)} />
                 );
               })}
             </div>
