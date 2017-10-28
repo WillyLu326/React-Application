@@ -13,6 +13,10 @@ class App extends Component {
     showPersons: true
   }
 
+  switchNameHandler = () => {
+    
+  }
+
   togglePersonsHander = () => {
     this.setState({ showPersons: !this.state.showPersons });
   }
