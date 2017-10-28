@@ -13,11 +13,25 @@ class App extends Component {
     showPersons: true
   }
 
+  
+
   render() {
     return (
       <div className="App">
         <button>Switch Name</button>
         <button>Toggle Persons</button>
+
+        {
+          this.state.showPersons ? (
+            <div>
+              <Person />
+              <Person />
+              <Person />
+            </div>
+          ) : null
+        }
+
+
       </div>
     );
   }
