@@ -14,7 +14,9 @@ class App extends Component {
   }
 
   switchNameHandler = () => {
-    
+    let persons = [...this.state.persons];
+    persons[0].name = 'Willy Lu!!!';
+    this.setState({ persons: persons });
   }
 
   togglePersonsHander = () => {
