@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
         <button onClick={this.togglePersonsHander}>Toggle Persons</button>
         {
           this.state.showPersons ? (
