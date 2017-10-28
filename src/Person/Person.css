@@ -5,3 +5,7 @@
     margin: 16px auto;
     box-shadow: 0px 2px 2px darkgray;
 }
+
+.Person .deleteBtn {
+    float: right;
+}
