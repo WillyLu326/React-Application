@@ -47,11 +47,24 @@ class App extends Component {
     return style;
   }
 
+  styleToggleButton = () => {
+    let style = {
+      backgroundColor: 'red',
+      color: 'white',
+      padding: '12px',
+      cursor: 'pointer'
+    }
+    if (this.state.showPersons) {
+      style.backgroundColor = 'pink';
+    }
+    return style;
+  }
+
   render() {
     return (
       <div className="App">
         <button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
-        <button onClick={this.togglePersonsHander}>Toggle Persons</button>
+        <button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
         {
           this.state.showPersons ? (
             <div>
