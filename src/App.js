@@ -60,12 +60,23 @@ class App extends Component {
     return style;
   }
 
+  stylePersonListTitle = () => {
+    const style = [];
+    if (this.state.persons.length <= 2) {
+      style.push('blue');
+    }
+    if (this.state.persons.length <= 1) {
+      style.push('bold');
+    }
+    return style.join(' ');
+  }
+
   render() {
     return (
       <div className="App">
         <button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
         <button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
-        <p>This is person List</p>
+        <p className={this.stylePersonListTitle()}>This is person List</p>
         {
           this.state.showPersons ? (
             <div>
