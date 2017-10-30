@@ -53,10 +53,18 @@ class App extends Component {
       backgroundColor: 'red',
       color: 'white',
       padding: '12px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightred',
+        color: 'black'
+      }
     }
     if (this.state.showPersons) {
       style.backgroundColor = 'pink';
+      style[':hover'] = {
+        backgroundColor: 'lightgreen',
+        color: 'red'
+      }
     }
     return style;
   }
