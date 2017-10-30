@@ -82,28 +82,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
-        <button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
-        <p className={this.stylePersonListTitle()}>This is person List</p>
-        {
-          this.state.showPersons ? (
-            <div>
-              {this.state.persons.map((person, index) => {
-                return (
-                  <Person name={person.name} 
-                          age={person.age} 
-                          key={person.id}
-                          changed={(event) => this.changeNameHandler(event, index)}
-                          deleted={(event) => this.deletePersonHanlder(event, index)} />
-                );
-              })}
-            </div>
-          ) : null
-        }
-
-
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
+          <button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
+          <p className={this.stylePersonListTitle()}>This is person List</p>
+          {
+            this.state.showPersons ? (
+              <div>
+                {this.state.persons.map((person, index) => {
+                  return (
+                    <Person name={person.name} 
+                            age={person.age} 
+                            key={person.id}
+                            changed={(event) => this.changeNameHandler(event, index)}
+                            deleted={(event) => this.deletePersonHanlder(event, index)} />
+                  );
+                })}
+              </div>
+            ) : null
+          }
+        </div>
+      </StyleRoot>
     );
   }
 }
