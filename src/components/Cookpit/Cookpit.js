@@ -10,14 +10,17 @@ const Cookpit = (props) => {
 	}
 
 	let toggleBtnStyle = {
-
+		backgroundColor: 'pink',
+		color: 'white',
+		padding: '16px',
+		cursor: 'pointer'
 	}
 
 
 	return (
 		<div>
 			<button style={switchBtnStyle} onClick={props.switch.bind(this, 'Willy Lu!!!')}>Switch Name</button>
-			<button onClick={props.toggle}>Toggle Persons</button>
+			<button style={toggleBtnStyle} onClick={props.toggle}>Toggle Persons</button>
 			<p>This is person List</p>
 		</div>
 	);
