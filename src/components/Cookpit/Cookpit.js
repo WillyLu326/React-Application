@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 
 const Cookpit = (props) => {
 
@@ -13,7 +14,11 @@ const Cookpit = (props) => {
 		backgroundColor: 'pink',
 		color: 'white',
 		padding: '16px',
-		cursor: 'pointer'
+		cursor: 'pointer',
+		':hover': {
+			backgroundColor: 'lightgreen',
+			color: 'black'
+		}
 	}
 
 
@@ -26,4 +31,4 @@ const Cookpit = (props) => {
 	);
 }
 
-export default Cookpit
+export default Radium(Cookpit)
