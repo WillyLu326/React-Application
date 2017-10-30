@@ -15,6 +15,7 @@ class App extends Component {
     showPersons: true
   }
 
+  // Used for Cookpit Component
   switchNameHandler = (newName) => {
     let persons = [...this.state.persons];
     if (!persons || persons.length === 0) return ;
@@ -26,6 +27,7 @@ class App extends Component {
     this.setState({ showPersons: !this.state.showPersons });
   }
 
+  // Used for Person & Persons Component
   deletePersonHanlder = (event, index) => {
     let persons = [...this.state.persons];
     persons.splice(index, 1);
