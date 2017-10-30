@@ -90,7 +90,9 @@ class App extends Component {
           {
             this.state.showPersons ? (
               <Persons 
-                persons={this.state.persons}/>
+                persons={this.state.persons}
+                changed={this.changeNameHandler}
+                deleted={this.deletePersonHanlder}/>
             ) : null
           }
         </div>
