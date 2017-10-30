@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Radium, { StyleRoot } from 'radium';
-import Person from './../components/Person/Person';
+import Persons from './../components/Persons';
 
 class App extends Component {
 
@@ -89,17 +89,8 @@ class App extends Component {
           <p className={this.stylePersonListTitle()}>This is person List</p>
           {
             this.state.showPersons ? (
-              <div>
-                {this.state.persons.map((person, index) => {
-                  return (
-                    <Person name={person.name} 
-                            age={person.age} 
-                            key={person.id}
-                            changed={(event) => this.changeNameHandler(event, index)}
-                            deleted={(event) => this.deletePersonHanlder(event, index)} />
-                  );
-                })}
-              </div>
+              <Persons 
+                persons={this.state.persons}/>
             ) : null
           }
         </div>
