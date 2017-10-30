@@ -84,9 +84,7 @@ class App extends Component {
     return (
       <StyleRoot>
         <div className="App">
-          <button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
-          <button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
-          <p className={this.stylePersonListTitle()}>This is person List</p>
+          
           {
             this.state.showPersons ? (
               <Persons 
