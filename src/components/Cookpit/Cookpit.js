@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Cookpit = () => {
+const Cookpit = (props) => {
+
 	return (
 		<div>
-			<button style={this.styleSwitchButton()} onClick={this.switchNameHandler.bind(this, 'Willy Lu~!!!!')}>Switch Name</button>
-			<button style={this.styleToggleButton()} onClick={this.togglePersonsHander}>Toggle Persons</button>
-			<p className={this.stylePersonListTitle()}>This is person List</p>
+			<button onClick={props.switch.bind(this, 'Willy Lu!!!')}>Switch Name</button>
+			<button>Toggle Persons</button>
+			<p>This is person List</p>
 		</div>
 	);
 }

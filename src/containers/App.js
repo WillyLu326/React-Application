@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Radium, { StyleRoot } from 'radium';
 import Persons from './../components/Persons';
+import Cookpit from './../components/Cookpit/Cookpit';
 
 class App extends Component {
 
@@ -38,53 +39,14 @@ class App extends Component {
     this.setState({ persons: persons });
   }
 
-  styleSwitchButton = () => {
-    let style = {
-      backgroundColor: 'green',
-      color: 'white',
-      padding: '12px',
-      cursor: 'pointer'
-    }
-    return style;
-  }
-
-  styleToggleButton = () => {
-    let style = {
-      backgroundColor: 'red',
-      color: 'white',
-      padding: '12px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightred',
-        color: 'black'
-      }
-    }
-    if (this.state.showPersons) {
-      style.backgroundColor = 'pink';
-      style[':hover'] = {
-        backgroundColor: 'lightgreen',
-        color: 'red'
-      }
-    }
-    return style;
-  }
-
-  stylePersonListTitle = () => {
-    const style = [];
-    if (this.state.persons.length <= 2) {
-      style.push('blue');
-    }
-    if (this.state.persons.length <= 1) {
-      style.push('bold');
-    }
-    return style.join(' ');
-  }
-
   render() {
     return (
       <StyleRoot>
         <div className="App">
-          
+          <Cookpit 
+            showPersons={this.state.showPersons}
+            persons={this.state.persons}
+            switch={this.switchNameHandler}/>
           {
             this.state.showPersons ? (
               <Persons 
