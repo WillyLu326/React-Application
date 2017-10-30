@@ -17,6 +17,7 @@ class App extends Component {
 
   switchNameHandler = (newName) => {
     let persons = [...this.state.persons];
+    if (!persons || persons.length === 0) return ;
     persons[0].name = newName;
     this.setState({ persons: persons });
   }
@@ -46,7 +47,8 @@ class App extends Component {
           <Cookpit 
             showPersons={this.state.showPersons}
             persons={this.state.persons}
-            switch={this.switchNameHandler}/>
+            switch={this.switchNameHandler}
+            toggle={this.togglePersonsHander}/>
           {
             this.state.showPersons ? (
               <Persons 
