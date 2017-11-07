@@ -15,7 +15,8 @@ class Blog extends Component {
 							<li><Link to="/"> Home </Link></li>
 							<li><Link to={
 								{
-									pathname: '/new-post'
+									pathname: '/new-post',
+									hase: '#coming'
 								}
 							}>New Post</Link></li>
 						</ul>
