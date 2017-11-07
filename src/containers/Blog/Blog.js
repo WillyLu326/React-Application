@@ -18,7 +18,7 @@ class Blog extends Component {
 					</nav>
 				</header>
 				<Route path="/" exact={true} component={Posts} />
-
+				<Route path="/new-post" exact component={NewPost} />
 			</div>
 		);
 	}
