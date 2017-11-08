@@ -12,14 +12,14 @@ class Blog extends Component {
 				<header>
 					<nav>
 						<ul>
-							<li><Link to="/"> Home </Link></li>
-							<li><Link to={
+							<li><NavLink to="/"> Home </NavLink></li>
+							<li><NavLink to={
 								{
 									pathname: '/new-post',
 									hase: '#coming',
 									search: '?query=value'
 								}
-							}>New Post</Link></li>
+							}>New Post</NavLink></li>
 						</ul>
 					</nav>
 				</header>
