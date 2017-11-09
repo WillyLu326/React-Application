@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
@@ -24,9 +24,11 @@ class Blog extends Component {
 						</ul>
 					</nav>
 				</header>
-				<Route path="/" exact={true} component={Posts} />
-				<Route path="/new-post" exact component={NewPost} />
-				<Route path="/:id" component={FullPost} />
+				<Switch>
+					<Route path="/" exact={true} component={Posts} />
+					<Route path="/new-post" exact component={NewPost} />
+					<Route path="/:id" component={FullPost} />
+				</Switch>
 			</div>
 		);
 	}
