@@ -31,6 +31,7 @@ class Posts extends Component {
 
 	postSelectedHandler = (id) => {
 		this.setState({ selectedPostId: id });
+		this.props.history.push('/' + id);
 	}
 
 	render() {
@@ -39,6 +40,7 @@ class Posts extends Component {
 			posts = this.state.posts.map(post => {
 				return (
 					<Post
+						key={post.id}
 						title={post.title}
 						author={post.author}
 						clicked={() => this.postSelectedHandler(post.id)} />
